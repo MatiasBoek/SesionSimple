@@ -7,7 +7,7 @@ from google import genai  # SDK nueva
 
 # 1) Cargar variables de entorno del archivo .env
 load_dotenv()
-gemini_api_key = os.getenv("GEMINI_API_KEY")
+gemini_api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
 
 client = None
 if gemini_api_key:
